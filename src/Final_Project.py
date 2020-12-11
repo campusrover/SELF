@@ -174,10 +174,7 @@ def cv_callback(msg):
 
         #apply most favorable state to the movement of the robot
         if failsafe:
-            if angular_state >= 0:
-                t.angular.z = 0.5
-            elif angular_state <= 0:
-                t.angular.z = -0.5
+            t.angular.z = 0.5
             t.linear.x = 0.0
         else:
             t.linear.x = linear_state
